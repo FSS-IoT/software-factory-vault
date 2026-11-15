@@ -2,7 +2,8 @@
 
 How to take an idea to something running, with agents, in stages.
 
-Generic on purpose: no project, no stack, no operating system, no harness.
+Generic on purpose: no project, no stack, no operating system, no particular
+harness.
 
 **This vault is a seed.** Once it is copied into someone's own store, that copy is
 the source of truth. Edit it. It is meant to learn how its owner works, which is

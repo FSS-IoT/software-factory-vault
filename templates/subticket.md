@@ -45,6 +45,7 @@ A fresh session, no author context, checks the work against the spec.
 
 **Verdict:** <approved / rejected>
 **Evidence:** <the failing run, the passing run, the diff>
+**Mutation:** <what the reviewer broke on purpose, and which check caught it>
 **Notes:** <what failed, if rejected, and what the next session must do>
 
 ## Close

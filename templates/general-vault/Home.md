@@ -24,13 +24,14 @@ one. A fact in two pages drifts.
 | `projects/` | one page per project: where it is, how it ships, what it holds to |
 | `user/` | how the owner likes to work: tone, pace, tools, limits |
 | `system/` | this machine: OS, shell, editor, agent, paths, quirks |
-| `software-factory/` | the method: seven stages, templates, and its own preferences |
+| `software-factory/` | the method: the stages, templates, and its own preferences |
 
 ## Adding a vault
 
-Make a folder with a `Home.md` of its own, then add a line to the table above.
-Add one when a subject outgrows a single page. Before that, the page belongs in
-an existing vault, and a new folder just gives it somewhere to hide.
+Make a folder with a `Home.md` and an `AGENTS.md` of its own, then add a line to
+the table above. Add one when a subject outgrows a single page. Before that, the
+page belongs in an existing vault, and a new folder just gives it somewhere to
+hide.
 
 ## Where things go
 

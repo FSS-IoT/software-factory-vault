@@ -5,6 +5,28 @@ and a student can see why it looks the way it does.
 
 Newest first. Method changes only. A preference belongs in `PREFERENCES.md`.
 
+## 2026-11-15, review pass
+
+Fixes from reading the seed against the deck.
+
+- **The pointer table names global files.** Codex is `~/.codex/AGENTS.md`, Gemini
+  CLI is `~/.gemini/GEMINI.md`, and Cursor keeps user rules in Settings. A project
+  instruction file is not the install, and the proof step will fail if it is.
+- **Setup records two machine facts instead of asking two more questions.** The
+  owner still answers three.
+- **The subticket template records the mutation**, because review asks for one.
+- **Research lands in a topic vault, in neutral words**, with no reference to how
+  one particular owner works.
+- **The contract no longer says "the copy is the seed."** The seed is the starting
+  point; the owner's copy is the source of truth.
+- **No stage count in the index.** Research is optional, so "seven" was always one
+  short of the rows.
+- **ADRs are named in the spec stage.** A choice that will be argued again gets a
+  numbered page in `docs/adr/`, with what was rejected and why.
+- **Every category in the vault skeleton is a subvault.** `projects/`, `user/`
+  and `system/` each get a `Home.md` and an `AGENTS.md`, which is what the
+  glossary already called a subvault.
+
 ## 2026-11-15, late
 
 Two rules from auditing the harness's own skills.

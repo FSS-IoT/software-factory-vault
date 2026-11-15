@@ -55,7 +55,8 @@ Copy the skeleton from `templates/general-vault/` into it:
 
 - `Home.md`, the index
 - `AGENTS.md`, the contract for reading and writing
-- `projects/`, `user/`, `system/`, each with one starter page
+- `projects/`, `user/`, `system/`, each a subvault with its own `Home.md`,
+  `AGENTS.md`, and one starter page
 
 Then make it a git repository and commit, if git exists. Their memory should be
 recoverable.
@@ -69,9 +70,9 @@ so is not pushing:
 - **`user/`** how they like to work. Filled by correction, not by interview.
 - **`system/`** this machine. OS, shell, editor, agent, paths, quirks.
 
-Add a category by making the folder with a `Home.md`, and adding one line to the
-index in `Home.md`. Do not create empty categories "for later"; they are where
-pages go to be forgotten.
+Add a category by making the folder with a `Home.md` and an `AGENTS.md`, and
+adding one line to the index in `Home.md`. Do not create empty categories "for
+later"; they are where pages go to be forgotten.
 
 A subject that is not a project gets its own folder only when it outgrows a
 single page.
@@ -83,7 +84,7 @@ directory. The copy is the person's; the repository it came from is only a seed.
 
 Add a line to the vault's `Home.md`:
 
-| `software-factory/` | the method: seven stages, templates, preferences |
+| `software-factory/` | the method: the stages, templates, preferences |
 
 If the vault already existed, that line is the whole install. Do not move or
 rename anything else.

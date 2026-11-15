@@ -22,7 +22,7 @@ If you would rather read before installing, open `START-HERE.md`.
 | | |
 |---|---|
 | `START-HERE.md` | the first hour, for a person |
-| `Home.md` | the index: the seven stages, how work starts |
+| `Home.md` | the index: the stages, how work starts |
 | `AGENTS.md` | the contract an agent follows |
 | `skills/` | the stages, one file each, plus two installers |
 | `templates/` | brief, spec, milestone, subticket, and the general vault skeleton |

@@ -26,6 +26,13 @@ criterion in it.
 Start from `templates/spec.md`. The spec lives in the project root, beside the
 code, and it is versioned like everything else.
 
+## Decisions that outlive the spec
+
+A choice with a reason that will be argued again gets one short page in
+`docs/adr/` in the repo, numbered and dated: what was chosen, what was rejected,
+and why. The spec points at it. That page is what ends the argument in six
+months.
+
 ## The signing gate
 
 The owner signs. Not the agent, not a reviewer agent.

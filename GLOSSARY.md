@@ -12,8 +12,8 @@ pi. It decides what the agent can touch and where it reads instructions.
 between sessions. One general vault holds the projects, the notes, and the method
 as subvaults.
 
-**Subvault**: a folder inside the vault with its own `Home.md`, indexed by the
-parent. The factory is one.
+**Subvault**: a folder inside the vault with its own `Home.md` and `AGENTS.md`,
+indexed by the parent. The factory is one.
 
 **Project page**: `projects/<name>.md`. Where the project lives, how it ships, and
 what it holds to. The memory across sessions that the repo cannot be.

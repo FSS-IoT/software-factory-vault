@@ -30,8 +30,8 @@ mode, let it do the reading. The findings still land here, in the vault, not in
 the repo. Where it goes:
 
 - A project's own research: the project page, or a page beside it.
-- A subject with no project yet: a topic vault, which is the same idea he uses
-  for research databases to build on later.
+- A subject with no project yet: a topic vault, the same shape as any research
+  database the owner builds on later.
 
 The page holds what was checked, where it came from, and what it rules out. Dates
 on anything that goes stale: prices, versions, policies.
