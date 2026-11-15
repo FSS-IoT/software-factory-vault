@@ -1,32 +1,46 @@
 ---
-name: brief
+name: Factory brief
 description: >
-  Write a milestone brief: facts before adjectives. Use when starting a
-  milestone, defining scope, or asking an agent to set up a milestone.
+  Start a project. Turn a free-form idea dump into a brief with facts,
+  constraints and non-goals, so the interview has something to attack. Use at the
+  very start of a project, before any spec exists.
 ---
 
-Write the milestone brief. Facts before adjectives.
+# Brief
 
-## Output
+Scope: **project**, once. A milestone does not get its own brief.
 
-A brief with three sections:
-- **Facts** — what must be true, each with a source or a grilling task.
-- **Constraints** — hard limits (local-only, no paid APIs, no auth, uncensored).
-- **Non-goals** — what this milestone does not do.
+The owner talks, you write. They do not need to be organised, complete, or
+technical. Your job is to get what is in their head onto the page without
+tidying it into something they did not say.
+
+## Ask for
+
+- **The idea**, in one sentence, in their words.
+- **Who it is for**, and where they will use it.
+- **What it must do**, and what it must never do.
+- **What it has to work with**: existing systems, accounts, hardware, policy.
+- **What "done" looks like** for the first version.
+- **Two things they like and two they hate**, with names. That is how taste gets
+  recorded without adjectives.
+- **What already exists.** A folder, a spreadsheet, a person doing it by hand.
+
+Then write `BRIEF.md` in the project root, from `templates/brief.md`. Keep it
+under a page.
 
 ## Rules
 
-- **Facts before adjectives.** A feature description without a confirmed fact is
-  an adjective, not a requirement. Adjectives go in non-goals or become grilling
-  tasks.
-- **Every fact is checkable.** If you cannot verify it, it is not a fact: it is
-  a grilling task for the next stage.
-- **Non-goals are load-bearing.** A milestone that does not state what it does
-  not do will do more. List them.
-- **No stack, no project.** The brief names behavior, not the tool that builds
-  it. Leave the implementation choice for tickets.
+- **Facts before adjectives.** "Loads in under a second on the office wifi" is a
+  fact. "Fast and modern" is an adjective: put it in non-goals or make it a
+  grilling task.
+- **Every fact carries where it came from**, or is marked as a grilling task.
+- **Non-goals are load-bearing.** A project that does not say what it will not do
+  will do more.
+- **No stack, no tool, no language.** Behavior only. The implementation is a
+  choice for later.
+- **An existing brief is not rewritten.** Adding a milestone means adding to it.
 
 ## Completion criterion
 
-Brief written with facts checked, constraints and non-goals stated. Grilling
-tasks listed for any unconfirmed fact.
+`BRIEF.md` exists with facts, constraints and non-goals. Anything unconfirmed is
+listed for the grill. The owner has read it and said it is right.

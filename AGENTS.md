@@ -1,39 +1,37 @@
-# software-factory — contract
+# software-factory, the contract
 
-Methodology for building software with agents. This vault is generic; it is not
-tied to any repo. Read `Home.md` for the loop, then the skill for your stage.
+How work gets done here. Read `Home.md` for the shape, then the stage file you are
+in.
 
-## Read
+## Read order
 
-- **`Home.md`** is the index and the loop. Read it before a milestone.
-- **The skill for the stage you are in.** Each skill is one station.
+1. `Home.md` for the levels and the stages.
+2. `PREFERENCES.md` for how this owner wants it done. It wins over a stage file
+   when they disagree.
+3. The stage file for the work in front of you.
 
 ## Write
 
-- **Only write lines that change behavior.** A skill that an agent already obeys
-  by default is a no-op. State the target behavior positively, not as a ban.
-- **No project name, no stack, no source.** Any concrete technology or the
-  example project is a placeholder to replace. This vault is shareable only if
-  nothing in it is specific to one build.
-- **Keep claims general, label inference.** "Agents can do this" is a claim; the
-  conditions under which it holds are inference. Mark them so a later reader
-  knows what to re-verify.
-- **Update the vault when the method changes.** A skill that describes a loop a
-  session no longer runs is worse than none: it will be trusted and acted on.
-- **The loop guarantees outcomes, not stages.** It delivers failing tests that
-  turn green, a real review, and learnings passed on. Match the machinery to the
-  change: the full loop for large work, a failing test plus a review for a small
-  tweak, oneshot for a one-off. Never skip the failing test or the review. A
-  one-time change through the full loop is the costliest mistake.
+- **Only write what changes behaviour.** A line an agent already obeys is noise.
+- **Preferences go in `PREFERENCES.md`**, in the owner's words, with a date. The
+  same correction three times becomes a proposal to change the stage file.
+- **A change to the method goes in the stage file**, with a line in `CHANGES.md`.
+- **No project, stack, or machine specifics.** Those belong in the project's
+  `PROJECT.md` and `BRIEF.md`. This vault stays shareable.
+- **The copy is the seed.** Once installed, the owner's copy is the source of
+  truth. This repository is only the starting point.
 
 ## Traps
 
-- **Grilling is not asking.** It is verifying. A claim without a confirmed
-  source is an assumption; assumptions do not enter the spec.
-- **Red tests that already pass are fake.** A test must fail before the code
-  exists. If it passes without implementation, the test is the bug.
-- **Review fixing is out of scope.** Review verifies and rejects; it does not
-  implement. Fixes come back in green.
-- **One context window per subticket.** Design subtickets small enough that a
-  single agent reads the ticket and all assisting docs into one window and does
-  the whole idea. Split larger work into subtickets first.
+- **Grilling is not asking permission.** It is finding out what is true, before
+  code makes being wrong expensive.
+- **A check that already passes is fake.** If it passes on a stub, the check is
+  the bug.
+- **Review does not fix.** It verifies and rejects. Fixes go back through red and
+  green.
+- **A bare milestone is not ready for tickets.** If it has no subtickets and the
+  spec does not cover it, grill it first.
+- **One context window per subticket.** If the session is re-reading to remember,
+  the subticket was too big. Split it.
+- **Review must be a fresh session**, not the author with a clear head. On
+  opencode, a subagent.

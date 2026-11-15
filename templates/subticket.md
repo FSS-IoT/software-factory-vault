@@ -1,48 +1,63 @@
-# <subticket-name>
+# <M1-1> <subticket name>
 
-**Subticket:** <M<digit>-<number>, e.g. M1-1>
+Copy this file, rename it, and replace every `<angle bracket>`.
+
+**Milestone:** <M1>
 **Status:** open
-**Priority:** P0
-**Depends on:** <which tickets must complete first>
+**Blocked by:** <subticket ids, or none>
+**Unblocks:** <subticket ids, or none>
 
 ## Idea
 
-One sentence. The single thing this subticket does.
+One sentence. One idea. If it contains "and", split it.
 
-## Red
+## Why
 
-Write the failing test first. It must fail without the implementation.
-- Test the idea from the subticket.
-- Cover inputs, outputs, and the edge case that distinguishes correct from
-  incomplete.
-- Run: it fails. A passing test on a stub is a fake test.
+The spec criterion this answers, quoted:
+
+> <criterion>
+
+## Check
+
+What must fail before the code exists:
+
+- <the assertion>
+
+Failing run, recorded before green starts:
+
+```
+<paste the failure here>
+```
 
 ## Green
 
-Implement the minimal code that turns the red test green.
-- Satisfy the red tests, not the idea beyond them.
-- Nothing else changed.
+The smallest code that makes it pass. Nothing else changed.
+
+Passing run:
+
+```
+<paste the passing run here>
+```
 
 ## Review
 
-Fresh session, no prior knowledge of how it was built. Verifies against the spec.
-Tests are real, not fake. Change is committable/mergeable. Can reject with
-comments. Does not fix.
+A fresh session, no author context, checks the work against the spec.
 
-## Blockers
+**Verdict:** <approved / rejected>
+**Evidence:** <the failing run, the passing run, the diff>
+**Notes:** <what failed, if rejected, and what the next session must do>
 
-- **Must complete first:** <tickets>
-- **Unblocks:** <tickets>
+## Ship
+
+- **Commit:** <id>
+- **Deployed:** <where, or "not deployed, ships as a push">
+- **Verified live:** <how>
 
 ## Assisting docs
 
-Files a new session reads to do this subticket:
-- Ticket: `<path to this ticket>`
-- Spec: `<path>`
-- Agents: `<path>`
-- Existing code / tests: `<path>`
+Read before starting. Create any that are missing.
 
-## Completion criterion
-
-Red tests fail without implementation; green implements; review approves (or
-rejects with comments). One idea, one context window.
+- ticket: <this file>
+- spec: <path>
+- project: <path>
+- existing checks: <path>

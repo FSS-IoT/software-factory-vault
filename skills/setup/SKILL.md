@@ -1,182 +1,137 @@
 ---
-name: setup
+name: Factory setup
 description: >
-  Guide setup of the Software Factory loop for a project: ask what is needed,
-  where to save issues, and how to wire the memory store. Use when asked to
-  install, set up, or configure the loop for a new project, or to onboard a
-  starter.
+  Set the factory up for a person: find their harness, place the vault, add one
+  pointer, choose where tickets and deploys go, then prove the loop with one real
+  subticket. Use for a first install, or when onboarding someone new.
 ---
 
-Guide setup of the Software Factory loop for the project. It is a guided walk,
-not a script: ask the questions, help the student choose, then the student does
-the steps. No install scripts, no config files, no machine-specific commands.
-It must work on any operating system the student has.
+# Setup
 
-The goal is to get the student using a memory store for every project, whether or
-not they knew one existed.
+Scope: **once per person**. After this, the loop runs on its own.
 
-## Match the change to the workflow
+You are walking a person through it, not installing software. They may have never
+opened a terminal. Ask before writing anything, and explain each step in one
+sentence before doing it.
 
-The loop exists to guarantee three things: failing tests that turn green, a real
-review, and learnings passed on. Match the machinery to the change; do the
-smallest slice that still delivers all three. Never skip the failing test or the
-review — those are the outcome, not the stages.
+## Done looks like
 
-- **Large project, or many interdependent changes** — brief, grilling, spec,
-tickets, red/green/review. The full loop. This is heavy machinery; it earns its
-weight here.
-- **A small, localized change** — skip brief, grilling, spec, and tickets. Write
-one failing test, the fix, then a fresh-session review. Same outcome, less
-machinery.
-- **A one-off small project** — oneshot it: write it, add a test, review once.
-No milestones, no subtickets. The outcome is still failing tests and a review.
+- The agent reads this vault at the start of every session.
+- One place for tickets, one way to deploy, both written down.
+- One project with a signed spec and one subticket that shipped.
+- `PREFERENCES.md` has at least one line in the owner's words.
 
-The student is choosing between a real review and wasted setup work. Lean toward
-the smaller slice that still leaves a green test and a review. A one-time tweak
-through the full loop is the costliest mistake the loop can make.
+## Step 0: which harness
 
-## Step 1 — What is needed
+| Harness | Instruction file it reads first | Skills folder |
+|---|---|---|
+| opencode | `~/.config/opencode/AGENTS.md` | `~/.config/opencode/skills` |
+| Claude Code | `~/.claude/CLAUDE.md` | `~/.claude/skills` |
+| Codex, many CLIs | `AGENTS.md` in the project | none |
+| Cursor | `.cursor/rules` | none |
+| Gemini CLI | `GEMINI.md` | none |
 
-Ask what they are building and what the loop should do. Help them fill in:
-- **Scope** — the milestone or first slice of work.
-- **Constraints** — local-only, no paid APIs, no auth, uncensored, the stack they
-  want.
-- **Non-goals** — what this milestone does not do.
+If theirs is not listed, ask it directly: "which file do you read at the start of
+every session?" Use what it answers. Never invent a path.
 
-Then ask them to record those three in their own brief, the document they already
-use to describe the milestone. The loop reads from that brief.
+Subagents are a capability, not a requirement. Ask two questions and record the
+answers in `PREFERENCES.md`: does this harness have subagents (on some, like pi,
+they are a separate module), and can this machine run two contexts at once? A
+review as a new session is just as valid as a review as a subagent. Nothing in
+the method depends on running two things at the same time.
 
-## Step 2 — Where to save issues
+## Step 1: place the vault
 
-Ask where issues live. Three options:
-- **Local scratch** — a folder with tickets and milestones, nothing shared.
-  Simplest. The default for students.
-- **GitHub issues** — a real issue tracker, PRs, CI.
-- **Other** — GitLab, Gitea, or another tracker.
+Ask where it should live. Next to their projects, not inside one. Something like
+`Documents/factory` is fine.
 
-Walk them through the choice. Local scratch is fine if they have no remote. If
-they pick a remote, help them connect their project to it — but ask first, and
-never guess the project's settings.
+If this vault is already on their machine, keep it where it is. If not, copy it
+there and ask them to look at the folder, so they know where it is.
 
-## Step 3 — The memory store
+Then make it a git repository, so their edits are recoverable. If they have never
+used git, offer to run it for them and show the output. Do not assume a shell.
 
-Ask where to copy this methodology into, and whether they already have a store.
+## Step 2: the pointer
 
-**They have none** — suggest creating one.
-1. Pick a path for the main vault they can remember.
-2. Copy this `software-factory` vault into it as a subvault.
-3. Register the subvault in the main vault's index.
-4. Wire the memory store into their harness (Step 4).
+Add this to the instruction file from Step 0, in the **global** file, never the
+project one, because project instruction files get regenerated:
 
-**They already have one** — ask whether they want this methodology inside it or
-as a separate vault. If inside, copy it in as a subvault. If separate, copy it
-to a new place and link it from their existing store.
+> The software factory method lives at `<path>/Home.md`. Read it before planning
+> or starting work. When a stage needs doing, open its file in `skills/`.
 
-A new store is not finished until it has a `Home.md`, its own repository
-initialization, and a line in the root ignore so it is not tracked twice.
+One line. This is the whole install. Nothing is copied into a skills folder.
 
-## Step 0 — How the skills are found
+## Step 3: exposing the stages (optional)
 
-Ask how the student wants the loop's skills discovered. Two ways:
+Leave this out unless they ask for `/grill` style commands.
 
-**Discoverable through the vault** (default, recommended). The skills live in the
-vault alongside the methodology; the agent finds them by reading the vault's
-index. No harness change needed, works on any harness, and the student keeps one
-copy to share. This is the default.
+The vault works without it. If they want the stages visible in the harness's own
+skill list, either add the vault's `skills` folder as a skills source (opencode:
+a `skills` entry in `opencode.json`), or link the folder in. Link or configure
+the single copy; do not make a second copy to maintain.
 
-**Installed to the harness skill path** so the skills show automatically in the
-harness's skill list. The agent discovers its harness's own skill-loading
-convention — where it reads skills from — and copies the `skills/` folder there.
-This makes the skills appear without the student opening the vault, but it is a
-second copy to maintain.
+Two names in the vault are deliberately not the harness's words:
 
-Record the choice. Default to the vault. If installed, keep the vault as the
-source of truth and re-copy on changes.
+- **`redgreen`**, because opencode has a Build agent.
+- **`verify`**, because opencode has a `/review` command that reviews a diff in
+  the current session, which is not this stage.
 
-## Step 1 — The harness
+Tell them that once. It stops the obvious wrong turn.
 
-Ask permission to add the memory store to the running agent's own harness, so the
-agent and its agents find and create the store themselves when they need it.
+## Step 4: where tickets live
 
-The setup skill must not hardcode a path or command. It does not know the
-harness. The agent that runs setup runs inside a harness and already knows how
-to configure itself: discover the harness's own convention for agent
-directions and config — how it reads agent instructions, where its config lives,
-what its commands are — and add the pointer there using that mechanism. Do not
-invent one.
+Three options. Recommend the first unless they already have a tracker.
 
-The pointer should say:
-- **The memory store** — where it lives, that it is a tiered structure, and the
-  read-before-writing rule.
-- **Default vaults** — suggest `Projects`, `User Preferences`, and one per
-  shareable subject. Include these in the main harness instructions so new work
-  lands in the right place.
+- **Local files**: simplest, no account, works offline. One folder per milestone.
+- **GitHub issues**: a real milestone, one issue per subticket, blockers between
+  them.
+- **Other tracker**: GitLab, Gitea, Jira. Same shapes, different names.
 
-## Step 2 — What is needed
+Write the choice in `PROJECT.md`. Do not change it mid-project.
 
-Ask what they are building and what the loop should do. Help them fill in:
-- **Scope** — the milestone or first slice of work.
-- **Constraints** — local-only, no paid APIs, no auth, uncensored, the stack they
-  want.
-- **Non-goals** — what this milestone does not do.
+## Step 5: how it ships
 
-Then ask them to record those three in their own brief, the document they already
-use to describe the milestone. The loop reads from that brief.
+Ask where the finished thing goes when it is live. They may not have an answer,
+and that is allowed: record "nowhere yet, ships as a push".
 
-## Step 3 — Where to save issues
+Write it in `PROJECT.md` as one line. This is what the ship stage follows, and it
+is the difference between a project and a folder of files.
 
-Ask where issues live. Three options:
-- **Local scratch** — a folder with tickets and milestones, nothing shared.
-  Simplest. The default for students.
-- **GitHub issues** — a real issue tracker, PRs, CI.
-- **Other** — GitLab, Gitea, or another tracker.
+## Step 6: the first project
 
-Walk them through the choice. Local scratch is fine if they have no remote. If
-they pick a remote, help them connect their project to it — but ask first, and
-never guess the project's settings.
+Do this together, with their real idea.
 
-## Step 4 — The memory store
+1. Brief (`skills/brief/`). They talk, you write.
+2. Grill (`skills/grill/`). Interview them. This takes the longest, and it is the
+   most valuable part of the install.
+3. Spec (`skills/spec/`). One screen, then wait for the signature.
 
-Ask where to copy this methodology into, and whether they already have a store.
+Stop after the signature. Do not build anything yet.
 
-**They have none** — suggest creating one.
-1. Pick a path for the main vault they can remember.
-2. Copy this `software-factory` vault into it as a subvault.
-3. Register the subvault in the main vault's index.
-4. Wire the memory store into their harness (Step 1).
+## Step 7: prove the loop
 
-**They already have one** — ask whether they want this methodology inside it or
-as a separate vault. If inside, copy it in as a subvault. If separate, copy it
-to a new place and link it from their existing store.
+Take the smallest subticket that does something visible.
 
-A new store is not finished until it has a `Home.md`, its own repository
-initialization, and a line in the root ignore so it is not tracked twice.
+Run it start to finish: red, green, verify, ship. Do not skip verify, and do not
+let the verifying session be the one that wrote the code.
 
-## Suggested default vaults
-
-Offer these as the starting points, and make sure they appear in the main
-harness instructions:
-- **Projects** — the repos worked on: clones, remotes, what each holds to.
-- **User Preferences** — machine- and user-specific settings.
-- **One per subject** — a subvault per shareable topic (methodology, a project,
-  a service).
+Then ask two questions: what did the owner dislike, and what would they do
+differently? Write the answers in `PREFERENCES.md`. That is the first line of
+their factory rather than yours.
 
 ## Rules
 
-- **Ask before writing.** Do not copy the vault or edit the harness file without
-  confirmation.
-- **No scripts, no config files, no machine commands.** The student does the
-  steps by hand. Whatever the student's operating system, the walk is the same.
-- **No project name, no stack, no remote baked in.** The setup is generic; the
-  student records their specifics.
-- **Keep it simple first.** A main vault and local scratch beat a complex
-  structure. Grow the tiers only when they earn their place.
-- **Default to the vault.** Both the skills-discovery choice and the memory-store
-  wiring default to the least invasive option: the vault, and no harness change.
+- **Ask before writing.** Every file, every config line.
+- **No machine-specific commands.** If a step needs one, offer to run it and show
+  the output. Never assume the shell, the OS, or the package manager.
+- **No project specifics in the vault.** Their project goes in `PROJECT.md`, their
+  taste in `PREFERENCES.md`.
+- **Keep it small.** A single vault and local ticket files beat a structure with
+  tiers they did not ask for.
+- **Do not install what they did not ask for.** The pointer is the install; the
+  rest is optional.
 
 ## Completion criterion
 
-The student has a brief with scope, constraints and non-goals, an issue storage
-chosen, a skills-discovery choice made, a memory store in place, and — with
-permission — a pointer in their harness. They can start a milestone the next
-session without being told where anything goes.
+The owner can start their next milestone without you, and knows where their
+preferences, tickets, and deploy path are written down.

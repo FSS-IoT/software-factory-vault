@@ -1,39 +1,58 @@
 ---
-name: spec
+name: Factory spec
 description: >
-  Write the spec from confirmed facts, reviewed and signed before code. Use when
-  the grilling session is done and you are ready to define the work.
+  Write the project spec from confirmed facts, get it signed by the owner, and
+  keep it current as milestones land. Use when the grill is done, before any
+  code is written.
 ---
 
-Write the spec. It is reviewed and signed before any code. The spec is the
-contract every subticket and every test answers against.
+# Spec
 
-## What the spec contains
+Scope: **project**. One spec, and it usually covers more than one milestone.
 
-- **Scope** — what the milestone delivers.
-- **Acceptance criteria** — per deliverable, checkable, each tied to a subticket.
-- **Non-goals** — what is out of scope.
-- **Constraints** — the hard limits from the brief.
+The spec is the contract. Tickets answer to it, and every check answers to a
+criterion in it.
+
+## What it contains
+
+- **Scope**: what the project delivers.
+- **Milestones**: the order things become real, one line each. Mark the ones
+  that are not detailed yet. Those get grilled before they get tickets.
+- **Acceptance criteria**: per milestone, checkable, each one small enough to
+  become a single subticket.
+- **Non-goals**: what this project will not do.
+- **Constraints**: the hard limits carried over from the brief.
+
+Start from `templates/spec.md`. The spec lives in the project root, beside the
+code, and it is versioned like everything else.
+
+## The signing gate
+
+The owner signs. Not the agent, not a reviewer agent.
+
+1. Show one screen: what it delivers, what it does not, the criteria, and any
+   open question.
+2. Wait. Answer what they ask. Change what they change.
+3. When they say yes, write it at the bottom of the spec:
+
+```
+Signed: <name>, <date>
+```
+
+No code before that line exists. A spec nobody signed is trust, not agreement.
 
 ## Rules
 
-- **Only confirmed facts enter.** Anything open from grilling is not in the
-  spec; it is either resolved or a non-goal.
-- **Every acceptance criterion is checkable.** If you cannot test it, it cannot
-  be a criterion. Split fuzzy bounds into local, cheap checks.
-- **One idea per subticket.** Each acceptance criterion maps to one subticket,
-  which is one minimal, testable idea. Do not pack two ideas into one criterion.
-- **State blockers per subticket.** Each subticket names which tickets can start
-  now and which must wait on another ticket completing first.
-- **Keep it project-agnostic.** Behavior, not the stack. The implementation stays
-  a choice for tickets.
-
-## The review gate
-
-The spec is reviewed and signed before code. Do not write code until the spec is
-signed. A spec that is not reviewed is trusted and built against silently.
+- **Only confirmed facts.** Anything open from the grill is either resolved, or a
+  non-goal.
+- **Every criterion is checkable.** If it cannot become a check, it is not a
+  criterion yet.
+- **One idea per criterion**, so one criterion maps to one subticket.
+- **No stack.** Behavior, not the tool. The choice belongs in the project page.
+- **The spec changes when the project changes**, and the change is dated. A
+  signed spec that quietly drifts is worse than no spec.
 
 ## Completion criterion
 
-Spec written with checkable acceptance criteria, each mapped to one subticket
-with blockers stated. Spec reviewed and signed. No code written before signing.
+Spec written, criteria checkable, milestones ordered, non-goals stated, owner
+signed. No code written before the signature.
