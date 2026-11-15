@@ -44,6 +44,10 @@ paths.
   leftover failing checks.
 - **It is shippable**: coherent on its own, and the commit could stand.
 
+If the project has CI, it owns the mechanical checks: does it build, do the
+checks pass, did anything else break. This stage still owns the judgment, and no
+pipeline can make it for you.
+
 ## Output
 
 - **Approved**: what you verified, and the evidence you looked at.

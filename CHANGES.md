@@ -22,6 +22,11 @@ Setup is an installer, not a stage.
 - **Project facts moved to `PROJECT.md`**, written by the brief stage: repo,
   branch, where tickets live, how it deploys. Ticket storage is no longer a global
   install question.
+- **CI/CD is optional machinery.** The ship and verify stages now say it: a
+  pipeline can run beside the loop or take over the mechanical half of review
+  (does it build, do the checks pass, did anything else break), and it cannot make
+  the judgment. A project without CI ships the same way, by running the same checks
+  by hand and saying so.
 
 ## 2026-11-14
 

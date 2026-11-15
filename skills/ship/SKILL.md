@@ -19,7 +19,8 @@ loop that never changes anything.
 2. **Push.** To the branch the project uses. If the project uses branches and
    pull requests, this is where the pull request opens.
 3. **Watch the checks** if the project has CI. A red pipeline stops the line,
-   for everyone.
+   for everyone. CI is optional: without it, run the same checks by hand before
+   you deploy, and say that you did.
 4. **Deploy** the way this project deploys. The path is written in the project
    page (`PROJECT.md`), and it is the same path every time.
 5. **Verify it is live**: open it, hit the endpoint, check the version. Not "the
