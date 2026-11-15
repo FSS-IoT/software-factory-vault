@@ -25,7 +25,7 @@ Each criterion maps to one subticket below.
 
 ## Constraints
 
-- Local-only / no auth / no paid APIs / uncensored / etc.
+- Local-only / no auth / no paid APIs / etc.
 
 ## Blocked by
 

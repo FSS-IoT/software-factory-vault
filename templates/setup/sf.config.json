@@ -1,0 +1,22 @@
+{
+  "name": "replace-with-project-name",
+  "loop": {
+    "issue-storage": "local-scratch",
+    "issue-storage-path": ".scratch/milestones/",
+    "issues-url": ""
+  },
+  "memory": {
+    "store-path": "replace-with-memory-path",
+    "type": "tiered-vault",
+    "main-vault": "replace-with-main-vault-name",
+    "subvaults": ["replace-with-subvault-name"],
+    "harness-integrated": false
+  },
+  "constraints": {
+    "local-only": true,
+    "no-paid-apis": true,
+    "no-auth": true,
+    "uncensored": true
+  },
+  "milestones": []
+}

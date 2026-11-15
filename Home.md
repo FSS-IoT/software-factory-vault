@@ -4,9 +4,6 @@ A generalized, shareable methodology for building software with agents. Not
 tied to any project. It is the process: brief, grilling, spec, tickets,
 then the red / green / review loop per subticket.
 
-**Definition:** a subvault that is its own vault. Once the content is verified
-generic, share it directly as its own vault.
-
 ## Read
 
 - **`AGENTS.md`** first — the contract this vault holds.
@@ -20,13 +17,14 @@ brief ──▶ grill ──▶ spec ──▶ tickets ──▶ [per subticket]
                           (planning)     red ──▶ green ──▶ review
 ```
 
-- **Planning** (milestone setup): brief, grilling, spec, tickets.
+- **Planning** (milestone setup): setup, brief, grilling, spec, tickets.
 - **Execution** (per subticket, a new session each): red, green, review.
 
 ## Skills
 
 | Stage | Skill | Owns |
 |---|---|---|
+| Setup | `skills/setup/` | Guide setup of the loop for a project: scope, issue storage, memory store. |
 | Brief | `skills/brief/` | Write the milestone brief: facts before adjectives. |
 | Grill | `skills/grill/` | Verify facts before spec: grilling session. |
 | Spec | `skills/spec/` | Write spec, reviewed and signed before code. |
