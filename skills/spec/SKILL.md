@@ -40,7 +40,6 @@ Signed: <name>, <date>
 ```
 
 No code before that line exists. A spec nobody signed is trust, not agreement.
-A decision engine may rank the options. It cannot sign; the owner does.
 
 ## Rules
 

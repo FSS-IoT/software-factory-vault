@@ -25,9 +25,9 @@ It is not a station. Most projects skip it, and skipping is the normal case.
 
 ## What it produces
 
-A page in the vault, not a chat summary. If the harness has its own research
-skill, use it to do the reading. The findings still land here, in the vault, not
-in the repo. Where it goes:
+A page in the vault, not a chat summary. If the harness has a research or explore
+mode, let it do the reading. The findings still land here, in the vault, not in
+the repo. Where it goes:
 
 - A project's own research: the project page, or a page beside it.
 - A subject with no project yet: a topic vault, which is the same idea he uses

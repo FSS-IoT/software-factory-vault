@@ -5,6 +5,15 @@ and a student can see why it looks the way it does.
 
 Newest first. Method changes only. A preference belongs in `PREFERENCES.md`.
 
+## 2026-11-15, late
+
+Two rules from auditing the harness's own skills.
+
+- **Research output stays in the vault**, even when the harness has its own
+  research or explore mode. The tool reads; the vault keeps.
+- **Commit markers survive a house style.** Use `test(red):` and `feat(green):`
+  when the project follows Conventional Commits, `red:` and `green:` otherwise.
+
 ## 2026-11-15, night
 
 Review can break the code on purpose.
