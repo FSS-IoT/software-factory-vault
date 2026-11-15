@@ -57,9 +57,17 @@ initialization, and a line in the root ignore so it is not tracked twice.
 
 ## Step 4 — The harness
 
-Ask permission to add the memory store to their default harness agents file, so
-agents find and create the store themselves when they need it. Then write a short
-pointer there:
+Ask permission to add the memory store to the running agent's own harness, so the
+agent and its agents find and create the store themselves when they need it.
+
+The setup skill must not hardcode a path or command. It does not know the
+harness. The agent that runs setup runs inside a harness and already knows how
+to configure itself: discover the harness's own convention for agent
+directions and config — how it reads agent instructions, where its config lives,
+what its commands are — and add the pointer there using that mechanism. Do not
+invent one.
+
+The pointer should say:
 - **The memory store** — where it lives, that it is a tiered structure, and the
   read-before-writing rule.
 - **Default vaults** — suggest `Projects`, `User Preferences`, and one per
