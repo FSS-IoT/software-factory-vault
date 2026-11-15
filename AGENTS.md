@@ -20,6 +20,11 @@ tied to any repo. Read `Home.md` for the loop, then the skill for your stage.
   knows what to re-verify.
 - **Update the vault when the method changes.** A skill that describes a loop a
   session no longer runs is worse than none: it will be trusted and acted on.
+- **The loop guarantees outcomes, not stages.** It delivers failing tests that
+  turn green, a real review, and learnings passed on. Match the machinery to the
+  change: the full loop for large work, a failing test plus a review for a small
+  tweak, oneshot for a one-off. Never skip the failing test or the review. A
+  one-time change through the full loop is the costliest mistake.
 
 ## Traps
 

@@ -15,6 +15,26 @@ It must work on any operating system the student has.
 The goal is to get the student using a memory store for every project, whether or
 not they knew one existed.
 
+## Match the change to the workflow
+
+The loop exists to guarantee three things: failing tests that turn green, a real
+review, and learnings passed on. Match the machinery to the change; do the
+smallest slice that still delivers all three. Never skip the failing test or the
+review — those are the outcome, not the stages.
+
+- **Large project, or many interdependent changes** — brief, grilling, spec,
+tickets, red/green/review. The full loop. This is heavy machinery; it earns its
+weight here.
+- **A small, localized change** — skip brief, grilling, spec, and tickets. Write
+one failing test, the fix, then a fresh-session review. Same outcome, less
+machinery.
+- **A one-off small project** — oneshot it: write it, add a test, review once.
+No milestones, no subtickets. The outcome is still failing tests and a review.
+
+The student is choosing between a real review and wasted setup work. Lean toward
+the smaller slice that still leaves a green test and a review. A one-time tweak
+through the full loop is the costliest mistake the loop can make.
+
 ## Step 1 — What is needed
 
 Ask what they are building and what the loop should do. Help them fill in:

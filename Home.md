@@ -2,7 +2,10 @@
 
 A generalized, shareable methodology for building software with agents. Not
 tied to any project. It is the process: brief, grilling, spec, tickets,
-then the red / green / review loop per subticket.
+then the red / green / review loop per subticket. The loop scales to the change:
+the full loop for large work, a failing test plus a review for a small tweak,
+oneshot for a one-off. It always delivers failing tests, a real review, and
+learnings passed on.
 
 ## Read
 
@@ -48,3 +51,8 @@ brief ──▶ grill ──▶ spec ──▶ tickets ──▶ [per subticket]
   verifies, it does not fix. It can reject and send work back.
 - **Grilling before spec.** Facts confirmed before they are written down.
 - **Pluggable.** No project name, no stack, no source. Replace the placeholders.
+- **Match the change to the workflow.** The loop guarantees failing tests, a real
+  review, and learnings passed on — not the stages. Scale it: the full loop for
+  large work, a failing test plus a review for a small tweak, oneshot for a
+  one-off. Never skip the failing test or the review. Run the smallest slice that
+  still delivers all three.
