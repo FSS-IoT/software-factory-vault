@@ -33,6 +33,10 @@ Each criterion maps to exactly one subticket.
 
 - <hard limits carried from the brief>
 
+## Decisions
+
+- <date>: <decision> (the page lives in `docs/adr/<number>-<slug>.md`)
+
 ## Open questions
 
 - <question>: <who answers it, by when>
