@@ -5,6 +5,24 @@ and a student can see why it looks the way it does.
 
 Newest first. Method changes only. A preference belongs in `PREFERENCES.md`.
 
+## 2026-11-15
+
+Setup is an installer, not a stage.
+
+- **Setup moved out of the loop.** It ran once as "step 0", which made it look like
+  a station. It now installs the method and hands over; the loop starts when the
+  owner says what they want to build.
+- **Entry is natural language.** Home has a table from what a person says ("set up
+  the factory", "I want to build X", "ship it") to the file to read. An agent that
+  has read Home routes itself.
+- **Setup works from anywhere.** Cloned, downloaded, unpacked, run from home or a
+  scratch folder, on any OS. It places the vault permanently, adds the pointer to
+  the global instruction file, and proves it from a different folder before
+  handing over.
+- **Project facts moved to `PROJECT.md`**, written by the brief stage: repo,
+  branch, where tickets live, how it deploys. Ticket storage is no longer a global
+  install question.
+
 ## 2026-11-14
 
 Restructured before the first class. The loop is the same; the front door and the

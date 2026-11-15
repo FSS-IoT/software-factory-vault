@@ -10,6 +10,9 @@ in.
    when they disagree.
 3. The stage file for the work in front of you.
 
+**Setup is an installer, not a stage.** It runs once per machine and is never
+part of the loop. The loop starts when the owner says what they want to build.
+
 ## Write
 
 - **Only write what changes behaviour.** A line an agent already obeys is noise.

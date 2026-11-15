@@ -28,6 +28,19 @@ tidying it into something they did not say.
 Then write `BRIEF.md` in the project root, from `templates/brief.md`. Keep it
 under a page.
 
+## Where the project lives
+
+Four facts belong on one page, `PROJECT.md`, from `templates/project.md`:
+
+- where the repository is, or "not created yet"
+- which branch work lands on
+- where tickets live: local files, GitHub issues, or another tracker
+- how it deploys, in one line, or "nowhere yet, ships as a push"
+
+Ask for them here, once. Every later stage reads this page instead of asking
+again. A project with no repo and no deploy target is normal at the start; write
+that down honestly instead of inventing an answer.
+
 ## Rules
 
 - **Facts before adjectives.** "Loads in under a second on the office wifi" is a
@@ -42,5 +55,6 @@ under a page.
 
 ## Completion criterion
 
-`BRIEF.md` exists with facts, constraints and non-goals. Anything unconfirmed is
-listed for the grill. The owner has read it and said it is right.
+`BRIEF.md` exists with facts, constraints and non-goals, and `PROJECT.md` records
+where the code, the tickets and the deploy live. Anything unconfirmed is listed
+for the grill. The owner has read the brief and said it is right.

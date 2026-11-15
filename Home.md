@@ -14,7 +14,7 @@ what `PREFERENCES.md` is for.
 |---|---|
 | A person, first time | `START-HERE.md` |
 | An agent, first session | this file, then the stage you are in |
-| Adding a project | `skills/setup/SKILL.md` |
+| Installing it on a machine | `skills/setup/SKILL.md` |
 | Wondering why it looks like this | `CHANGES.md` |
 | Stuck on a word | `GLOSSARY.md` |
 
@@ -25,6 +25,25 @@ file the harness reads at session start:
 > before planning or starting work.
 
 That is the whole install. Nothing needs to be copied into a skills folder.
+
+## How it starts
+
+Nobody has to name a file. An agent that has read this page maps what the person
+says to the right one:
+
+| They say | Open |
+|---|---|
+| "set up the software factory", "install this", "I cloned this repo" | `skills/setup/` |
+| "I want to build ...", "new project" | `skills/brief/` |
+| "grill me on ...", "I am not sure what I want" | `skills/grill/` |
+| "write the spec", "what are we agreeing to" | `skills/spec/` |
+| "break it down", "what is next", "cut tickets" | `skills/tickets/` |
+| "build this one", "make the check fail first" | `skills/redgreen/` |
+| "review this", "is it right", "check my work" | `skills/verify/` |
+| "ship it", "deploy", "is it live" | `skills/ship/` |
+
+Setup is an installer, not a station. It runs once per person, and it is the only
+thing that has to be asked for by name.
 
 ## The shape
 
@@ -51,7 +70,6 @@ facts get found, and it is the cheapest place to be wrong.
 
 | Stage | Scope | File | Produces |
 |---|---|---|---|
-| Setup | once | `skills/setup/` | a pointer in the harness, issue storage, a deploy path, the first project |
 | Brief | project | `skills/brief/` | the free-form dump, written down as facts, constraints, non-goals |
 | Grill | any time | `skills/grill/` | confirmed facts and decisions, with sources |
 | Spec | project | `skills/spec/` | the contract, signed, criteria mapped to milestones |
@@ -59,6 +77,9 @@ facts get found, and it is the cheapest place to be wrong.
 | Red / green | subticket | `skills/redgreen/` | a check that failed, then code that makes it pass |
 | Review | subticket | `skills/verify/` | approved or rejected, with evidence |
 | Ship | subticket | `skills/ship/` | committed, pushed, live, verified |
+
+Seven stages, all of them inside the factory. `skills/setup/` sits outside the
+table: it installs this method on a machine, once, and is not part of running it.
 
 The class that teaches this calls a stage a **station**. Same thing.
 

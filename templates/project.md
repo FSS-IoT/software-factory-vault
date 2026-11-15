@@ -1,7 +1,7 @@
 # <project>
 
 One page about this project's setup, so no session has to guess it. Fill this in
-during setup and change it when the project moves.
+when the project starts, and change it when the project moves at all.
 
 ## Where things are
 

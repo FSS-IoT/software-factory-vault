@@ -1,137 +1,126 @@
 ---
 name: Factory setup
 description: >
-  Set the factory up for a person: find their harness, place the vault, add one
-  pointer, choose where tickets and deploys go, then prove the loop with one real
-  subticket. Use for a first install, or when onboarding someone new.
+  Install the software factory on this machine: place the vault, add one pointer
+  so every session finds it, and prove it works. Use when someone says "set up
+  the software factory", "install this", "I cloned this repo", or when the vault
+  has just been downloaded and nothing else has been done.
 ---
 
 # Setup
 
-Scope: **once per person**. After this, the loop runs on its own.
+**This is an installer, not a station.** It runs once per person and is never part
+of the loop. After it, the work starts when the owner says what they want to
+build.
 
-You are walking a person through it, not installing software. They may have never
-opened a terminal. Ask before writing anything, and explain each step in one
-sentence before doing it.
+It usually arrives as one sentence: "clone `<url>` and run the setup skill". It
+may be run from a home folder, a scratch folder, or a downloaded zip. No project
+exists yet, and there may be no shell, no git, and no package manager. Do not
+assume any of them.
 
 ## Done looks like
 
-- The agent reads this vault at the start of every session.
-- One place for tickets, one way to deploy, both written down.
-- One project with a signed spec and one subticket that shipped.
-- `PREFERENCES.md` has at least one line in the owner's words.
+- The vault lives somewhere permanent, not in a download folder or a temp dir.
+- Any session, started in any folder, finds it and reads it first.
+- The owner knows they will never run setup again.
+- `PREFERENCES.md` records the harness, the model, and how review will run.
 
-## Step 0: which harness
+## Step 1: where it lives
 
-| Harness | Instruction file it reads first | Skills folder |
-|---|---|---|
-| opencode | `~/.config/opencode/AGENTS.md` | `~/.config/opencode/skills` |
-| Claude Code | `~/.claude/CLAUDE.md` | `~/.claude/skills` |
-| Codex, many CLIs | `AGENTS.md` in the project | none |
-| Cursor | `.cursor/rules` | none |
-| Gemini CLI | `GEMINI.md` | none |
+If the vault was just cloned or unpacked, ask where to keep it. Suggest somewhere
+they will remember, next to their projects rather than inside one:
 
-If theirs is not listed, ask it directly: "which file do you read at the start of
-every session?" Use what it answers. Never invent a path.
+- `Documents/factory` is fine.
+- Not `Downloads`, not `/tmp`, not inside a project that might get deleted.
 
-Subagents are a capability, not a requirement. Ask two questions and record the
-answers in `PREFERENCES.md`: does this harness have subagents (on some, like pi,
-they are a separate module), and can this machine run two contexts at once? A
-review as a new session is just as valid as a review as a subagent. Nothing in
-the method depends on running two things at the same time.
+Move it there, or keep it where it is if that is already a sensible place. Show
+them the folder afterwards, so they know where their copy is.
 
-## Step 1: place the vault
+## Step 2: make it theirs
 
-Ask where it should live. Next to their projects, not inside one. Something like
-`Documents/factory` is fine.
+If it is not a git repository, offer to make it one and commit. Their edits should
+be recoverable, and the whole point is that this copy changes over time.
 
-If this vault is already on their machine, keep it where it is. If not, copy it
-there and ask them to look at the folder, so they know where it is.
+If git is not installed, that is not a blocker: skip it and say what is missing.
 
-Then make it a git repository, so their edits are recoverable. If they have never
-used git, offer to run it for them and show the output. Do not assume a shell.
+## Step 3: the pointer
 
-## Step 2: the pointer
-
-Add this to the instruction file from Step 0, in the **global** file, never the
-project one, because project instruction files get regenerated:
+This is the install. Add one line to the file their harness reads at the start of
+every session, in the **global** file, never the project one:
 
 > The software factory method lives at `<path>/Home.md`. Read it before planning
-> or starting work. When a stage needs doing, open its file in `skills/`.
+> or starting work.
 
-One line. This is the whole install. Nothing is copied into a skills folder.
+Which file:
 
-## Step 3: exposing the stages (optional)
+| Harness | Reads first |
+|---|---|
+| opencode | `~/.config/opencode/AGENTS.md` |
+| Claude Code | `~/.claude/CLAUDE.md` |
+| Codex and many CLIs | `AGENTS.md` in the project |
+| Cursor | `.cursor/rules` |
+| Gemini CLI | `GEMINI.md` |
 
-Leave this out unless they ask for `/grill` style commands.
+Not listed? Ask the agent directly: "which file do you read at the start of every
+session?" Use its answer. Never invent a path.
 
-The vault works without it. If they want the stages visible in the harness's own
-skill list, either add the vault's `skills` folder as a skills source (opencode:
-a `skills` entry in `opencode.json`), or link the folder in. Link or configure
-the single copy; do not make a second copy to maintain.
+Global rather than project because project instruction files get regenerated by
+tools like `/init`, and the vault is meant to be found from every folder.
 
-Two names in the vault are deliberately not the harness's words:
+## Step 4: prove it is permanent
 
-- **`redgreen`**, because opencode has a Build agent.
-- **`verify`**, because opencode has a `/review` command that reviews a diff in
-  the current session, which is not this stage.
+Do not trust the pointer until it works.
 
-Tell them that once. It stops the obvious wrong turn.
+1. Open a session in a **different** folder, one with no project in it.
+2. Ask: "what is the software factory method?"
+3. The agent should read `Home.md` and answer. If it cannot, the pointer is in
+   the wrong file or the path is wrong. Fix it now.
 
-## Step 4: where tickets live
+This one test is the difference between an install and a folder that gets
+forgotten.
 
-Three options. Recommend the first unless they already have a tracker.
+## Step 5: what this machine can do
 
-- **Local files**: simplest, no account, works offline. One folder per milestone.
-- **GitHub issues**: a real milestone, one issue per subticket, blockers between
-  them.
-- **Other tracker**: GitLab, Gitea, Jira. Same shapes, different names.
+Two questions, recorded in `PREFERENCES.md`:
 
-Write the choice in `PROJECT.md`. Do not change it mid-project.
+- Does the harness have subagents? On some, like pi, they are a separate module.
+- Can the machine run two model contexts at once?
 
-## Step 5: how it ships
+A review as a new session is as valid as a review as a subagent, so a small local
+model loses nothing. Record the answer and the review line, and move on.
 
-Ask where the finished thing goes when it is live. They may not have an answer,
-and that is allowed: record "nowhere yet, ships as a push".
+## Step 6: hand over
 
-Write it in `PROJECT.md` as one line. This is what the ship stage follows, and it
-is the difference between a project and a folder of files.
+Say this, in these words:
 
-## Step 6: the first project
+> Setup is finished. You never run it again. To start work, open the folder for
+> your project and tell me what you want to build.
 
-Do this together, with their real idea.
+Then give two examples: "I want to make a thing that does X" and "grill me on
+this idea". Both are enough, because the method is inferred from `Home.md`.
 
-1. Brief (`skills/brief/`). They talk, you write.
-2. Grill (`skills/grill/`). Interview them. This takes the longest, and it is the
-   most valuable part of the install.
-3. Spec (`skills/spec/`). One screen, then wait for the signature.
+If they want to start their first project now, hand over to `skills/brief/`. Do
+not do it as part of setup unless they ask.
 
-Stop after the signature. Do not build anything yet.
+## Optional: exposing the stages
 
-## Step 7: prove the loop
+Only if they ask for `/grill` style commands. The vault works without it.
 
-Take the smallest subticket that does something visible.
-
-Run it start to finish: red, green, verify, ship. Do not skip verify, and do not
-let the verifying session be the one that wrote the code.
-
-Then ask two questions: what did the owner dislike, and what would they do
-differently? Write the answers in `PREFERENCES.md`. That is the first line of
-their factory rather than yours.
+If they want it, add the single copy as a skills source (opencode: a `skills`
+entry in `opencode.json`) or link it, rather than copying it in. Two file names
+differ from the harness's words on purpose: `redgreen`, because opencode has a
+Build agent, and `verify`, because opencode's `/review` command reviews a diff in
+the current session.
 
 ## Rules
 
-- **Ask before writing.** Every file, every config line.
-- **No machine-specific commands.** If a step needs one, offer to run it and show
-  the output. Never assume the shell, the OS, or the package manager.
-- **No project specifics in the vault.** Their project goes in `PROJECT.md`, their
-  taste in `PREFERENCES.md`.
-- **Keep it small.** A single vault and local ticket files beat a structure with
-  tiers they did not ask for.
-- **Do not install what they did not ask for.** The pointer is the install; the
-  rest is optional.
+- **Ask before writing.** Every file, every line.
+- **No machine-specific commands.** Offer to run one and show the output. Never
+  assume the OS, the shell, or the package manager.
+- **No project specifics here.** The project's facts go in its `PROJECT.md`.
+- **Do not install more than was asked for.** The pointer is the install.
 
 ## Completion criterion
 
-The owner can start their next milestone without you, and knows where their
-preferences, tickets, and deploy path are written down.
+The owner can open a folder, say "I want to build X", and the agent knows what to
+do without being told where the method lives.
