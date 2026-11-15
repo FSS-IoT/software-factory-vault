@@ -36,7 +36,8 @@ keep notes across all their projects?
   anything else.
 - **They do not want one.** Install the factory standalone where it sits. Project
   facts stay in a `PROJECT.md` beside the code. This is a fine answer, not a
-  failure.
+  failure, and it is not permanent: a vault can be added later, and
+  `skills/vault-setup/` migrates the install without reinstalling anything.
 
 Explain the reason in one sentence, then take their answer: a vault is where an
 agent's memory survives the session, and without one every project starts by
@@ -105,6 +106,9 @@ Say this, in these words:
 
 > Setup is finished. You never run it again. To start work, open the folder for
 > your project and tell me what you want to build.
+
+Add one line for the standalone case: "If you ever want a vault, ask for one. It
+gets added without reinstalling anything."
 
 Then give two examples: "I want to make a thing that does X" and "grill me on
 this idea". Both are enough, because the method is inferred from the vault index.

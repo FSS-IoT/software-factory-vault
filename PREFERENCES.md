@@ -3,6 +3,10 @@
 How this owner wants the work done. The agent reads this before it plans
 anything, and it wins over the stage files where the two disagree.
 
+This file is only about running the factory. Broader preferences (tone, tools,
+what they are learning) belong to the general vault's `user/preferences.md` when
+there is one, and the two link to each other.
+
 ## How a line gets here
 
 - **A correction becomes a line.** When the owner says "do it this way instead",

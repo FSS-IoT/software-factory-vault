@@ -22,6 +22,14 @@ A general vault, and the factory as one subvault of it.
   `Home.md`, which points at the subvault. One line, then links do the rest.
 - **The ship stage updates the project page** when the deploy path or the live
   check changes, so the page is the live truth and not a first-day snapshot.
+- **Standalone can become a vault later.** `skills/vault-setup/` now migrates: move
+  the seed in rather than copying it, move each `PROJECT.md` to
+  `projects/<name>.md`, repoint the harness, start a new session. Nothing is
+  reinstalled.
+- **Two preference files, on purpose.** The factory's own is
+  `software-factory/PREFERENCES.md`; the person's broader preferences are
+  `user/preferences.md`. They link to each other and neither owns the other's
+  facts.
 
 ## 2026-11-15
 

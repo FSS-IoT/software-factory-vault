@@ -22,10 +22,29 @@ those two steps yourself when it is done.
 |---|---|
 | No vault yet | New, steps 1 to 4 |
 | A vault exists | Adopt, steps 3 and 4 only, after asking |
+| Standalone install, now wants a vault | Migrate, below, after steps 1 and 2 |
 | The person does not want one | Stop. The factory runs standalone with a local `PROJECT.md`. |
 
 Never restructure an existing vault without asking. A vault is someone's memory;
 moving pages is how it stops being trusted.
+
+## Migrating a standalone install
+
+The factory was installed on its own and the owner now wants a vault. Do not
+create a second copy of the factory, or the two will drift and neither will be
+trusted.
+
+1. Build the vault: steps 1 and 2.
+2. **Move** the factory folder into `<vault>/software-factory/`, without its
+   `.git`. Move, not copy. The vault's repository tracks it from now on.
+3. Move each project's facts. A `PROJECT.md` in a repo becomes
+   `<vault>/projects/<name>.md`, and the repo file becomes one line pointing at
+   it, or is deleted if nothing links to it. Same facts, one owner.
+4. Point the harness at the vault's `AGENTS.md` instead of the factory's
+   `Home.md`. That is setup's step; do it in the same session if you are here on
+   your own.
+5. Tell the owner to start a new session. Every path the current one knows has
+   moved underneath it.
 
 ## Step 1: the root
 
