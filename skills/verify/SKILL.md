@@ -104,7 +104,7 @@ could see. Twelve checks stayed green. The behaviour was never tested, and the
   correction, something the next session would trip on. It goes in the project's
   docs, or in `PREFERENCES.md` if it is about how the owner wants work done.
 - **The owner sees the verdict.** One screen: approved or rejected, and the
-  evidence.
+  evidence. A decision engine may rank the options; the verdict is the owner's.
 
 ## Completion criterion
 

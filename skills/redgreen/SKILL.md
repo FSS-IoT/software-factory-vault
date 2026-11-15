@@ -41,6 +41,10 @@ red:   reject a wrong password (fails)
 green: reject a wrong password
 ```
 
+If the project uses Conventional Commits, keep its type and put the marker inside
+it: `test(red): reject a wrong password` and `feat(green): reject a wrong
+password`. A project with no convention uses the plain prefixes.
+
 The red commit is red in CI, and that is correct. It lives on the ticket branch
 and never lands on main. That commit is the proof a reviewer can check out and
 run.
