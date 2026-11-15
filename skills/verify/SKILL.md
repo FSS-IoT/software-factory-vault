@@ -39,8 +39,9 @@ paths.
 
 - **The spec**: each acceptance criterion for this subticket is met, or it is not.
   Not "looks good". Quote the criterion.
-- **The check is real**: it failed before the code, it covers the behaviour the
-  ticket adds, and it is not skipped, disabled, or passing on a stub.
+- **The check is real**: open the red commit, run the check, and watch it fail.
+  A check that passes there was never a check. It also has to cover the behaviour
+  the ticket adds, and it must not be skipped, disabled, or passing on a stub.
 - **Nothing else moved**: no half-built state, no other subticket's work, no
   leftover failing checks.
 - **It is shippable**: coherent on its own, and the commit could stand.

@@ -32,6 +32,45 @@ things called build is one too many.
 3. Run the rest of the checks. Nothing else broke.
 4. Stop. Do not add behaviour the check does not ask for.
 
+## Commit twice
+
+Commit the check alone, then the code.
+
+```
+red:   reject a wrong password (fails)
+green: reject a wrong password
+```
+
+The red commit is red in CI, and that is correct. It lives on the ticket branch
+and never lands on main. That commit is the proof a reviewer can check out and
+run.
+
+## When review rejects the red
+
+The check was fake: it passed, tested nothing, or tested the wrong thing. Rebuild
+the pair. Do not patch on top of green, and do not rebase by hand.
+
+1. Note the green commit: `git rev-parse HEAD`.
+2. Back up the branch: `git branch backup/<ticket>`.
+3. `git reset --hard <commit before red>`.
+4. Write the corrected check. Run it. It must fail, because no code exists.
+5. Commit it: `red: <behaviour> (fails)`.
+6. Restore the implementation from the green commit, and only the implementation:
+   `git checkout <green> -- <implementation paths>`.
+   Do not restore test files. `git checkout <green> -- .` would put the fake check
+   back.
+7. Run the checks. They pass. Commit: `green: <behaviour>`.
+
+If code and checks share a file, save `git diff <red> <green>` before the reset and
+apply that patch instead.
+
+Why not fix forward: a corrected check on top of green cannot fail, so it proves
+nothing. Why not a new branch: the code is good, and review has already read it.
+Why not rebase: the same rewrite, with more ways to lose work.
+
+If the branch was pushed, the rebuild ends with `git push --force-with-lease` on
+your own ticket branch.
+
 ## Rules
 
 - **The check fails first.** A check written after the code proves the code runs,
@@ -46,5 +85,5 @@ things called build is one too many.
 
 ## Completion criterion
 
-The failing run is recorded, then the passing run, with nothing else changed.
-Ready for review, not for shipping.
+Two commits: the failing check, then the code. The failing run is recorded, then
+the passing run. Ready for review, not for shipping.

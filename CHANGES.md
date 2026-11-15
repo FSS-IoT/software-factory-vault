@@ -5,6 +5,21 @@ and a student can see why it looks the way it does.
 
 Newest first. Method changes only. A preference belongs in `PREFERENCES.md`.
 
+## 2026-11-15, evening
+
+Red is its own commit.
+
+- **Two commits per ticket**: `red:` for the check that fails, `green:` for the
+  code. The red commit is the only proof another person can check out and run.
+  It is red in CI on purpose, and it never lands on main.
+- **A fake red is rebuilt, not patched.** Review opens the red commit and runs the
+  check. If it passes, the ticket goes back: reset to the commit before red, write
+  the corrected check, watch it fail, commit it, then restore the implementation
+  (not the test files) from the green commit and commit that.
+- **Why not fix forward**: a corrected check on top of green cannot fail, so it
+  proves nothing. **Why not a new branch**: the code is good and review has read
+  it. **Why not rebase**: the same rewrite with more ways to lose work.
+
 ## 2026-11-15, later
 
 The brief is not a station, and ship closes the milestone.

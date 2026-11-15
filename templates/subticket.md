@@ -51,7 +51,8 @@ A fresh session, no author context, checks the work against the spec.
 
 Approval closes the ticket. Shipping is the milestone's move, not this one.
 
-- **Commit:** <id>
+- **Red commit:** <id> (the check fails here)
+- **Green commit:** <id>
 - **Closed:** <date>
 
 ## Assisting docs

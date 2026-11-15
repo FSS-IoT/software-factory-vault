@@ -36,6 +36,8 @@ change the last line. That is the whole migration.
 
 - How much ceremony: "small changes skip tickets", "always cut tickets".
 - How work is split: "one commit per subticket", "red and green in one session".
+- Commits: "red and green as two commits" (the default, so the failing state is in
+  history), or one commit if the project does not care.
 - When it ships: "every milestone" (the default) or "every ticket".
 - Where things live: "issues in GitHub", "notes in this vault", "no CI".
 - Voice: "explain the check before running it", "no summaries at the end".
