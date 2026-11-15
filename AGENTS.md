@@ -19,8 +19,8 @@ part of the loop. The loop starts when the owner says what they want to build.
 - **Preferences go in `PREFERENCES.md`**, in the owner's words, with a date. The
   same correction three times becomes a proposal to change the stage file.
 - **A change to the method goes in the stage file**, with a line in `CHANGES.md`.
-- **No project, stack, or machine specifics.** Those belong in the project's
-  `PROJECT.md` and `BRIEF.md`. This vault stays shareable.
+- **No project, stack, or machine specifics.** Those belong on the project's page
+  and in its `BRIEF.md`. This vault stays shareable.
 - **The copy is the seed.** Once installed, the owner's copy is the source of
   truth. This repository is only the starting point.
 

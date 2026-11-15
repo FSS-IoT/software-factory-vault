@@ -30,16 +30,22 @@ under a page.
 
 ## Where the project lives
 
-Four facts belong on one page, `PROJECT.md`, from `templates/project.md`:
+Four facts belong on the project's page: where the repo is, which branch work
+lands on, where tickets live, and how it deploys (or "nowhere yet, ships as a
+push").
 
-- where the repository is, or "not created yet"
-- which branch work lands on
-- where tickets live: local files, GitHub issues, or another tracker
-- how it deploys, in one line, or "nowhere yet, ships as a push"
+**If there is a general vault with `projects/`**, the page goes at
+`<vault>/projects/<name>.md`, from `templates/general-vault/projects/_template.md`.
+The repo keeps `BRIEF.md` and `SPEC.md`; the vault page holds where it lives, how
+it ships, and its state.
 
-Ask for them here, once. Every later stage reads this page instead of asking
-again. A project with no repo and no deploy target is normal at the start; write
-that down honestly instead of inventing an answer.
+**If there is no projects vault**, ask once: create one now, or keep a
+`PROJECT.md` beside the code. Record the answer in `PREFERENCES.md` so no later
+stage asks again.
+
+Ask for the four facts here, once. Every later stage reads the page instead of
+asking again. A project with no repo and no deploy target is normal at the start;
+write that down honestly instead of inventing an answer.
 
 ## Rules
 
@@ -55,6 +61,6 @@ that down honestly instead of inventing an answer.
 
 ## Completion criterion
 
-`BRIEF.md` exists with facts, constraints and non-goals, and `PROJECT.md` records
-where the code, the tickets and the deploy live. Anything unconfirmed is listed
-for the grill. The owner has read the brief and said it is right.
+`BRIEF.md` exists with facts, constraints and non-goals, and the project's page
+records where the code, the tickets and the deploy live. Anything unconfirmed is
+listed for the grill. The owner has read the brief and said it is right.

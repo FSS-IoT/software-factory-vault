@@ -33,8 +33,9 @@ Start from `templates/subticket.md`.
 
 ## Where the tickets live
 
-Read `PROJECT.md`. Where tickets live was decided when the project started. If
-the page is missing, create it from `templates/project.md` before cutting
+Read the project page: `<vault>/projects/<name>.md`, or the repo's `PROJECT.md`
+when the project is standalone. Where tickets live was decided when the project
+started. If the page is missing, create it from the template before cutting
 anything, so this is answered once and not per session.
 
 | Storage | Milestone is | Subticket is | Blockers are |

@@ -19,14 +19,18 @@ From any folder, say:
 Or, if you already downloaded it: "I downloaded this folder, set it up for me."
 Both are enough. The agent reads the vault and works out the rest.
 
-## 3. Answer two questions
+## 3. Answer three questions
 
-Where the vault should live, and which file your agent reads first. It will ask.
-Pick somewhere permanent, like `Documents/factory`, not Downloads.
+Whether you want one vault for everything (say yes), where it should live, and
+which file your agent reads first. Pick somewhere permanent, like
+`Documents/Vault`, not Downloads.
+
+That one vault holds your projects, your machine notes, and the factory itself.
+It is the part that makes an agent remember between sessions.
 
 Then it proves the install by opening a fresh session in another folder and
-asking the agent about the method. If that works, you are done, and you never run
-setup again.
+asking where your vault is. If that works, you are done, and you never run setup
+again.
 
 ## 4. Start a project by saying what you want
 
@@ -74,7 +78,8 @@ instead of mine.
 
 ## What you should have after one lap
 
-- `BRIEF.md`, `PROJECT.md` and `SPEC.md` in the project, with the spec signed.
+- `BRIEF.md` and `SPEC.md` in the project, with the spec signed.
+- A page in `projects/` saying where the project lives and how it ships.
 - One milestone with a handful of subtickets.
 - One of them built, reviewed, and shipped.
 - A `PREFERENCES.md` with at least one line that came from you.

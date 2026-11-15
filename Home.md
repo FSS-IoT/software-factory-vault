@@ -8,6 +8,10 @@ Generic on purpose: no project, no stack, no operating system, no harness.
 the source of truth. Edit it. It is meant to learn how its owner works, which is
 what `PREFERENCES.md` is for.
 
+It can stand alone, or live as one subvault of a general vault that also holds
+their projects and notes. `templates/general-vault/` is the skeleton for the
+second case.
+
 ## Start here
 
 | You are | Read |
@@ -34,6 +38,7 @@ says to the right one:
 | They say | Open |
 |---|---|
 | "set up the software factory", "install this", "I cloned this repo" | `skills/setup/` |
+| "set up a vault", "where should my notes live" | `skills/vault-setup/` |
 | "I want to build ...", "new project" | `skills/brief/` |
 | "grill me on ...", "I am not sure what I want" | `skills/grill/` |
 | "write the spec", "what are we agreeing to" | `skills/spec/` |
@@ -43,7 +48,8 @@ says to the right one:
 | "ship it", "deploy", "is it live" | `skills/ship/` |
 
 Setup is an installer, not a station. It runs once per person, and it is the only
-thing that has to be asked for by name.
+thing that has to be asked for by name. `skills/vault-setup/` is the second installer:
+it builds the general vault the factory can live in.
 
 ## The shape
 
@@ -108,8 +114,11 @@ method can make.
 
 - `templates/brief.md` and `templates/spec.md` for the two project documents.
 - `templates/milestone.md` and `templates/subticket.md` for the work.
-- `templates/project.md` for the per-project page: where the repo is, where it
-  deploys, what this project does differently.
+- `templates/project.md` for a standalone project page: where the repo is, where
+  it deploys, what this project does differently.
+- `templates/general-vault/` is the skeleton for a person's whole vault, which
+  `skills/vault-setup/` copies. When they have a vault, the project page lives in
+  `projects/<name>.md` instead of in the repo.
 
 ## Invariants
 

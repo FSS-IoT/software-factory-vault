@@ -7,6 +7,24 @@ Newest first. Method changes only. A preference belongs in `PREFERENCES.md`.
 
 ## 2026-11-15
 
+A general vault, and the factory as one subvault of it.
+
+- **`skills/vault-setup/` added.** It builds or adopts the vault that holds the
+  owner's memory: `Home.md`, `AGENTS.md`, and `projects/`, `user/`, `system/`.
+  `templates/general-vault/` is the skeleton it copies, so a weak agent copies
+  files instead of inventing a structure from prose.
+- **Setup chooses a mode**: new vault, existing vault, or standalone. It no
+  longer assumes the factory is the whole store.
+- **Project facts move out of the repo** when a vault exists: the page is
+  `projects/<name>.md`, and the repo keeps only `BRIEF.md` and `SPEC.md`. With no
+  vault, the question is asked once and `PROJECT.md` stays beside the code.
+- **The harness pointer now aims at the vault's `AGENTS.md`**, which points at
+  `Home.md`, which points at the subvault. One line, then links do the rest.
+- **The ship stage updates the project page** when the deploy path or the live
+  check changes, so the page is the live truth and not a first-day snapshot.
+
+## 2026-11-15
+
 Setup is an installer, not a stage.
 
 - **Setup moved out of the loop.** It ran once as "step 0", which made it look like

@@ -8,17 +8,24 @@ code, following your instructions.
 **Harness**: the app the agent runs inside. opencode, Claude Code, Codex, Cursor,
 pi. It decides what the agent can touch and where it reads instructions.
 
-**Vault**: a folder of markdown the agent reads. This one holds the method and,
-over time, what you have taught it.
+**Vault**: a folder of markdown the agent reads and writes, so it remembers
+between sessions. One general vault holds the projects, the notes, and the method
+as subvaults.
+
+**Subvault**: a folder inside the vault with its own `Home.md`, indexed by the
+parent. The factory is one.
+
+**Project page**: `projects/<name>.md`. Where the project lives, how it ships, and
+what it holds to. The memory across sessions that the repo cannot be.
+
+**Brief**: the project written down as facts, constraints and non-goals. Made
+once, added to when the project grows.
 
 **Session**: one conversation with the agent. It starts empty and forgets
 everything when it ends, unless something was written to a file.
 
 **Context window**: how much a session can hold at once. A subticket is sized to
 fit in one, so the agent never loses the thread.
-
-**Brief**: the project written down as facts, constraints and non-goals. Made
-once, added to when the project grows.
 
 **Grill (grilling)**: the interview where the agent asks you questions until the
 facts are settled. The cheapest place to be wrong.
