@@ -50,7 +50,7 @@ A fresh session, no author context, checks the work against the spec.
 ## Ship
 
 - **Commit:** <id>
-- **Deployed:** <where, or "not deployed, ships as a push">
+- **Closed:** <date>, by the commit above
 - **Verified live:** <how>
 
 ## Assisting docs

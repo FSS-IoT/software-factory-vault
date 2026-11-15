@@ -61,7 +61,8 @@ the tickets.
 
 The agent writes a check, runs it, and shows you it failing. Then the code that
 makes it pass. Then a fresh session reviews it, and either approves it or sends
-it back. Then it ships.
+it back. That closes the ticket. When the milestone's last ticket is closed,
+shipping closes the milestone.
 
 You are looking for two things:
 
@@ -78,10 +79,10 @@ instead of mine.
 
 ## What you should have after one lap
 
-- `BRIEF.md` and `SPEC.md` in the project, with the spec signed.
+- `SPEC.md` in the project, signed. A brief too, if the idea needed one.
 - A page in `projects/` saying where the project lives and how it ships.
 - One milestone with a handful of subtickets.
-- One of them built, reviewed, and shipped.
+- One of them built, reviewed, and its milestone shipped.
 - A `PREFERENCES.md` with at least one line that came from you.
 
 If you have that, take the next subticket. If something about the method is wrong

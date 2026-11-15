@@ -48,7 +48,8 @@ work that is still worth doing.
 **Review (verify)**: a session with none of the author's context checking the
 work against the spec. It can reject. It does not fix.
 
-**Ship**: commit, push, deploy, and prove it is live.
+**Ship**: the milestone's closing move. Merge, deploy, prove it is live, close
+the milestone.
 
 **Repository (repo)**: the folder with its whole history attached. Every version
 you ever committed is still there.
@@ -65,7 +66,8 @@ you ever committed is still there.
 **Deploy**: putting the thing where users can reach it. The path you use is
 written in the project page and never improvised.
 
-**Stage**: one step of the method. The class handout calls them stations.
+**Station**: one of the four steps in the loop. The class handout uses this word
+for tickets, red/green, review and ship.
 
 **Preference**: a note about how you want the work done, kept in
 `PREFERENCES.md`. Three of the same becomes a change to the method.

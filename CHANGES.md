@@ -5,6 +5,23 @@ and a student can see why it looks the way it does.
 
 Newest first. Method changes only. A preference belongs in `PREFERENCES.md`.
 
+## 2026-11-15, later
+
+The brief is not a station, and ship closes the milestone.
+
+- **Starters split from the loop.** Brief, research, grill and spec produce the
+  plan once per project. They are not stations; the loop is tickets, red/green,
+  review and ship, run on every milestone.
+- **Research is the optional starter.** For ideas that depend on facts nobody has
+  yet, research writes them into the vault before the grill, so the interview does
+  not start by guessing.
+- **Ship moved to the milestone.** Approval closes the ticket, with its commit.
+  Ship merges, deploys, verifies and closes the milestone. A milestone being
+  complete means its objectives are done, not that the software is perfect.
+- **Shipping every ticket is a preference.** Some projects deploy per ticket, and
+  micahn does. The default here is per milestone because it is easier to teach;
+  the copy is the owner's to change.
+
 ## 2026-11-15
 
 A general vault, and the factory as one subvault of it.

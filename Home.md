@@ -40,6 +40,7 @@ says to the right one:
 | "set up the software factory", "install this", "I cloned this repo" | `skills/setup/` |
 | "set up a vault", "where should my notes live" | `skills/vault-setup/` |
 | "I want to build ...", "new project" | `skills/brief/` |
+| "research this", "I need to know whether ..." | `skills/research/` |
 | "grill me on ...", "I am not sure what I want" | `skills/grill/` |
 | "write the spec", "what are we agreeing to" | `skills/spec/` |
 | "break it down", "what is next", "cut tickets" | `skills/tickets/` |
@@ -53,41 +54,47 @@ it builds the general vault the factory can live in.
 
 ## The shape
 
-Two levels. The project is described once; each milestone runs the loop.
+Two levels. The plan is made once; the loop runs on every milestone.
 
 ```
-project    brief ─▶ grill ─▶ spec        one, and it may cover several milestones
-                               │
-milestone           ┌──────────┴───────────┐
-                    │                      │
-             not detailed enough        detailed
-                    │                      │
-                 grill ──────▶ tickets ◀───┘
-                                  │
-                          per subticket:
-                  red, then green ─▶ review ─▶ ship
+project    brief ─▶ research? ─▶ grill ─▶ spec       once per project
+                                            │
+                                            ▼
+milestone  tickets ─▶ red, then green ─▶ review     a ticket closes here
+   ▲                                        │
+   │                                        ▼
+   └──── next milestone ◀──── ship ─────────┘        ship closes the milestone
 ```
 
 **Grilling is a move, not a stage.** It happens at project start, on a milestone
 that has no subtickets yet, or on any topic that needs pinning down. It is where
 facts get found, and it is the cheapest place to be wrong.
 
+**Shipping is the milestone's last move.** A milestone is done when its objectives
+are complete and the thing is live. Some projects ship on every ticket instead;
+that is a preference, set in `PREFERENCES.md`, not a rule of the method.
+
 ## Stages
 
-| Stage | Scope | File | Produces |
+**Starters**, once per project. They produce the plan, and they are not stations:
+
+| Starter | File | Produces |
+|---|---|---|
+| Brief | `skills/brief/` | the sentence that starts it, and a file if the idea is big |
+| Research (optional) | `skills/research/` | the facts the idea needs, written into the vault |
+| Grill | `skills/grill/` | confirmed facts and decisions, with sources |
+| Spec | `skills/spec/` | the signed contract, criteria mapped to milestones |
+
+**The loop**, once per milestone:
+
+| Station | Scope | File | Produces |
 |---|---|---|---|
-| Brief | project | `skills/brief/` | the free-form dump, written down as facts, constraints, non-goals |
-| Grill | any time | `skills/grill/` | confirmed facts and decisions, with sources |
-| Spec | project | `skills/spec/` | the contract, signed, criteria mapped to milestones |
 | Tickets | milestone | `skills/tickets/` | one subticket per criterion, with blockers |
 | Red / green | subticket | `skills/redgreen/` | a check that failed, then code that makes it pass |
-| Review | subticket | `skills/verify/` | approved or rejected, with evidence |
-| Ship | subticket | `skills/ship/` | committed, pushed, live, verified |
+| Review | subticket | `skills/verify/` | the ticket closed, with evidence |
+| Ship | milestone | `skills/ship/` | merged, deployed, verified, milestone closed |
 
-Seven stages, all of them inside the factory. `skills/setup/` sits outside the
-table: it installs this method on a machine, once, and is not part of running it.
-
-The class that teaches this calls a stage a **station**. Same thing.
+The class that teaches this calls the four loop steps **stations**. Same thing.
 
 Two files are named differently from the words used here, on purpose: `redgreen`
 because opencode already has a Build agent, and `verify` because opencode's

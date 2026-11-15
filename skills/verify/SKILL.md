@@ -2,13 +2,14 @@
 name: Factory review
 description: >
   Verify a finished subticket in a fresh session: does it meet the spec, is the
-  check real, is it shippable? Approve or reject. Does not fix. Use before a
-  subticket is committed or shipped.
+  check real, is it shippable? Approve or reject, then close the ticket. Does
+  not fix. Use before a subticket is closed.
 ---
 
 # Review
 
-Scope: **one subticket**, after red/green, before ship.
+Scope: **one subticket**, after red/green. Approval closes the ticket; shipping
+is a milestone move, not a ticket one.
 
 You start with no memory of writing this. Recover everything from the files.
 
@@ -50,7 +51,8 @@ pipeline can make it for you.
 
 ## Output
 
-- **Approved**: what you verified, and the evidence you looked at.
+- **Approved**: what you verified, and the evidence you looked at. Approval
+  closes the ticket; put the commit id on it.
 - **Rejected**: what fails the spec, which check is fake, what is not shippable,
   and what the next red/green session must do. Specific enough to act on.
 

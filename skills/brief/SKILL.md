@@ -10,9 +10,12 @@ description: >
 
 Scope: **project**, once. A milestone does not get its own brief.
 
-The owner talks, you write. They do not need to be organised, complete, or
-technical. Your job is to get what is in their head onto the page without
-tidying it into something they did not say.
+The brief is usually one sentence said out loud: "I want to build a thing that
+does X". It is not a document, and it is not a station. Your job is to catch what
+they say without tidying it into something they did not say.
+
+A file is optional. Write `BRIEF.md` when the idea is big enough to need one, and
+skip it when the sentence is enough.
 
 ## Ask for
 
