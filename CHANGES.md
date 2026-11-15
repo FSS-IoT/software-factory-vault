@@ -5,6 +5,22 @@ and a student can see why it looks the way it does.
 
 Newest first. Method changes only. A preference belongs in `PREFERENCES.md`.
 
+## 2026-11-15, night
+
+Review can break the code on purpose.
+
+- **Mutation as evidence.** A reviewer may delete a term, invert a condition, or
+  change a bound. Run the suite, then revert. If every check still passes, the
+  mutation was equivalent, or the behaviour was never tested. The reviewer decides
+  which by running it, not by reading the tests.
+- **Where it pays**: numbers, timing, randomness, and checks that only assert
+  nothing crashed. Those are where decoration hides.
+- **Cost**: one or two mutations and a minute. Not a mutation-testing campaign, and
+  no framework is needed.
+- **Why it earned the line**: deleting the copy term from a jitter function kept
+  twelve checks green. The behaviour was never tested, and the fix under review had
+  quietly removed a check.
+
 ## 2026-11-15, evening
 
 Red is its own commit.

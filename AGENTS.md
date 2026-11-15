@@ -30,6 +30,8 @@ part of the loop. The loop starts when the owner says what they want to build.
   code makes being wrong expensive.
 - **A check that already passes is fake.** If it passes on a stub, the check is
   the bug.
+- **A check that survives a mutation is decoration.** Review breaks the code on
+  purpose; if the suite stays green, the behaviour was never tested.
 - **Review does not fix.** It verifies and rejects. Fixes go back through red and
   green.
 - **A bare milestone is not ready for tickets.** If it has no subtickets and the

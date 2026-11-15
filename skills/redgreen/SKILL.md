@@ -80,6 +80,9 @@ your own ticket branch.
   implementation, it is documenting it, not testing it.
 - **One idea.** Anything you notice on the way goes in a new subticket, not in
   this one.
+- **A check should notice a changed number.** If deleting a term from the code
+  leaves the check green, it is decoration. Write it so the reviewer's mutation
+  fails it.
 - **One session.** If you are re-reading things you already read, you were
   over-scoped. Stop and split.
 
