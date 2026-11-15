@@ -46,7 +46,7 @@ Ask where to copy this methodology into, and whether they already have a store.
 1. Pick a path for the main vault they can remember.
 2. Copy this `software-factory` vault into it as a subvault.
 3. Register the subvault in the main vault's index.
-4. Register the main vault in their harness agents file (Step 4).
+4. Wire the memory store into their harness (Step 4).
 
 **They already have one** — ask whether they want this methodology inside it or
 as a separate vault. If inside, copy it in as a subvault. If separate, copy it
@@ -55,7 +55,25 @@ to a new place and link it from their existing store.
 A new store is not finished until it has a `Home.md`, its own repository
 initialization, and a line in the root ignore so it is not tracked twice.
 
-## Step 4 — The harness
+## Step 0 — How the skills are found
+
+Ask how the student wants the loop's skills discovered. Two ways:
+
+**Discoverable through the vault** (default, recommended). The skills live in the
+vault alongside the methodology; the agent finds them by reading the vault's
+index. No harness change needed, works on any harness, and the student keeps one
+copy to share. This is the default.
+
+**Installed to the harness skill path** so the skills show automatically in the
+harness's skill list. The agent discovers its harness's own skill-loading
+convention — where it reads skills from — and copies the `skills/` folder there.
+This makes the skills appear without the student opening the vault, but it is a
+second copy to maintain.
+
+Record the choice. Default to the vault. If installed, keep the vault as the
+source of truth and re-copy on changes.
+
+## Step 1 — The harness
 
 Ask permission to add the memory store to the running agent's own harness, so the
 agent and its agents find and create the store themselves when they need it.
@@ -73,6 +91,46 @@ The pointer should say:
 - **Default vaults** — suggest `Projects`, `User Preferences`, and one per
   shareable subject. Include these in the main harness instructions so new work
   lands in the right place.
+
+## Step 2 — What is needed
+
+Ask what they are building and what the loop should do. Help them fill in:
+- **Scope** — the milestone or first slice of work.
+- **Constraints** — local-only, no paid APIs, no auth, uncensored, the stack they
+  want.
+- **Non-goals** — what this milestone does not do.
+
+Then ask them to record those three in their own brief, the document they already
+use to describe the milestone. The loop reads from that brief.
+
+## Step 3 — Where to save issues
+
+Ask where issues live. Three options:
+- **Local scratch** — a folder with tickets and milestones, nothing shared.
+  Simplest. The default for students.
+- **GitHub issues** — a real issue tracker, PRs, CI.
+- **Other** — GitLab, Gitea, or another tracker.
+
+Walk them through the choice. Local scratch is fine if they have no remote. If
+they pick a remote, help them connect their project to it — but ask first, and
+never guess the project's settings.
+
+## Step 4 — The memory store
+
+Ask where to copy this methodology into, and whether they already have a store.
+
+**They have none** — suggest creating one.
+1. Pick a path for the main vault they can remember.
+2. Copy this `software-factory` vault into it as a subvault.
+3. Register the subvault in the main vault's index.
+4. Wire the memory store into their harness (Step 1).
+
+**They already have one** — ask whether they want this methodology inside it or
+as a separate vault. If inside, copy it in as a subvault. If separate, copy it
+to a new place and link it from their existing store.
+
+A new store is not finished until it has a `Home.md`, its own repository
+initialization, and a line in the root ignore so it is not tracked twice.
 
 ## Suggested default vaults
 
@@ -93,10 +151,12 @@ harness instructions:
   student records their specifics.
 - **Keep it simple first.** A main vault and local scratch beat a complex
   structure. Grow the tiers only when they earn their place.
+- **Default to the vault.** Both the skills-discovery choice and the memory-store
+  wiring default to the least invasive option: the vault, and no harness change.
 
 ## Completion criterion
 
 The student has a brief with scope, constraints and non-goals, an issue storage
-chosen, a memory store in place, and — with permission — a pointer in their
-harness agents file. They can start a milestone the next session without being
-told where anything goes.
+chosen, a skills-discovery choice made, a memory store in place, and — with
+permission — a pointer in their harness. They can start a milestone the next
+session without being told where anything goes.
