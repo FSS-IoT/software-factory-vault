@@ -47,11 +47,12 @@ A fresh session, no author context, checks the work against the spec.
 **Evidence:** <the failing run, the passing run, the diff>
 **Notes:** <what failed, if rejected, and what the next session must do>
 
-## Ship
+## Close
+
+Approval closes the ticket. Shipping is the milestone's move, not this one.
 
 - **Commit:** <id>
-- **Closed:** <date>, by the commit above
-- **Verified live:** <how>
+- **Closed:** <date>
 
 ## Assisting docs
 
